@@ -4,10 +4,10 @@ This project is an **agentic AI assistant** for scraping data automatically usin
 It can:
 
 - Check existing ScrapeStorm tasks for your request.
-- If no suitable task exists, ask an AI (deepseek + Groq) to suggest URLs and fields.
+- If no suitable task exists, ask an AI (DeepSeek + Groq) to suggest URLs and fields.
 - Automatically create new tasks via the ScrapeStorm API.
-- It automates handling scraping, pagination, deduplication, and saving data to MySQL (or any preferred RDBMS).
-
+- Handles scraping, pagination, deduplication, and saving data to MySQL (or any preferred RDBMS).
+- The final goal: take a user prompt ("What data do you want?") and handle the full pipeline from source determination to scraping the data, and pushing data to the preferred data sink.
 
 
 ---
@@ -23,5 +23,6 @@ pip install -r requirements.txt
 Copy .env.example to .env and fill in your API keys:
 
 cp .env.example .env
+
 
 
