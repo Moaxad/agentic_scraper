@@ -1,11 +1,4 @@
-#!/usr/bin/env python3
-"""
-Agentic scraper orchestrator:
-- Uses Groq LLM for reasoning (query generation, URL picking, schema extraction)
-- Uses googlesearch for web discovery
-- Uses ScrapeStorm REST API to run/create/start tasks
-- Stops once record_limit is reached and optionally stops the task
-"""
+# DRAFT file: not part of main app, used for testing task creation logic
 
 import os
 import time
@@ -26,13 +19,6 @@ except Exception:
 
 # ---- Config / env ----
 load_dotenv()
-
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-GROQ_MODEL = os.getenv("GROQ_MODEL_NAME", "deepseek-r1-distill-llama-70b")
-SCRAPESTORM_BASE = os.getenv("SCRAPESTORM_BASE_URL", "http://127.0.0.1:8080/rest/v1")
-SCRAPESTORM_API_KEY = os.getenv("SCRAPESTORM_API_KEY")  # optional
-SEARCH_LANG = os.getenv("SEARCH_LANG", "ar")
-DEFAULT_RECORD_LIMIT = int(os.getenv("RECORD_LIMIT", "100"))
 
 # ---- Logging ----
 LOG_PATH = os.getenv("LOG_PATH", "logs/agentic_scraper.log")
@@ -74,8 +60,6 @@ class GroqLLM:
 # ---- ScrapeStorm helpers ----
 def _headers():
     headers = {"Content-Type": "application/json"}
-    if SCRAPESTORM_API_KEY:
-        headers["Authorization"] = f"Bearer {SCRAPESTORM_API_KEY}"
     return headers
 
 
