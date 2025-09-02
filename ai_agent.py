@@ -1,5 +1,6 @@
 import requests
 from config import GROQ_API_KEY, MODEL
+import groq
 
 def ask_ai(user_request: str):
     """Send user request to Groq (via deepseek)."""
