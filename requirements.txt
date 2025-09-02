@@ -3,11 +3,7 @@ python-dotenv==1.0.1
 pydantic==2.5.1
 tenacity==8.2.2
 beautifulsoup4==4.13.0
-
-# search / search-api options (choose one or keep both for dev)
 googlesearch-python==1.1.1
 serpapi==1.0.6
-
-# LLM clients
 groq==0.2.0
 ollama==0.4.0
